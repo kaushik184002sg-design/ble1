@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ble - Empowering the Future of Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px; /* Account for fixed header */
+      }
+      
+      /* Enhanced smooth scrolling */
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        * {
+          scroll-behavior: smooth;
+        }
+      }
+      
+      /* Respect users who prefer reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+      
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: #140A1E;
+        color: #E0E0E0;
+        overflow-x: hidden;
+      }
+      /* Custom animations for orbital elements */
+      @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes spin-medium { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes spin-fast { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .animate-spin-slow { animation: spin-slow 80s linear infinite; }
+      .animate-spin-medium { animation: spin-medium 60s linear infinite; }
+      .animate-spin-fast { animation: spin-fast 40s linear infinite; }
+      .animate-spin-slow-reverse { animation: spin-slow 80s linear infinite reverse; }
+      .animate-spin-medium-reverse { animation: spin-medium 60s linear infinite reverse; }
+      .animate-spin-fast-reverse { animation: spin-fast 40s linear infinite reverse; }
+
+      /* Particle animation */
+      @keyframes move-particles {
+        0% { transform: translate(0, 0); opacity: 0; }
+        20% { opacity: 0.7; }
+        80% { opacity: 0.7; }
+        100% { transform: translate(var(--tx, 0px), var(--ty, 0px)); opacity: 0; }
+      }
+      .particle {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: move-particles 10s ease-in-out infinite;
+      }
+      
+      /* Line drawing animation for Why Work With Us section */
+      @keyframes draw-line {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@18.2.0",
+      "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+      "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+      "react/": "https://esm.sh/react@18.2.0/"
+    }
+  }
+  </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
